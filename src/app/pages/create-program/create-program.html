@@ -1,0 +1,48 @@
+<section class="create-program-page">
+  <div class="left-content">
+    <div class="MenuHeader">
+      <h1>Create Program</h1>
+      <p class="secondaryText">Set up your new program</p>
+    </div>
+    <hr class="divider" />
+    <div>
+      @for (option of menuOptions; track option) {
+      <div
+        class="option"
+        [class.active-option]="selectedOption === option.number"
+        (click)="selectOption(option.number)"
+      >
+        <div class="option-number">{{ option.number }}</div>
+        <div class="option-content">
+          <h3>{{ option.title }}</h3>
+          <p class="secondaryText">{{ option.description }}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="right-content">
+    @if (selectedOption === 1) {
+    <div>
+      <h2>Choose Program Type</h2>
+      <p>Select the type of program you want to create</p>
+
+      <div class="program-types-container">
+        @for (programType of programTypes; track programType) {
+        <app-program-type
+          [name]="programType.name"
+          [description]="programType.description"
+          [icon]="programType.icon"
+          [activities]="programType.activities"
+        ></app-program-type>
+        }
+      </div>
+    </div>
+    } @else if (selectedOption === 2) {
+    <div>
+      <h2>Basic Information</h2>
+      <p>Enter the basic details for your program</p>
+    </div>
+    }
+  </div>
+</section>

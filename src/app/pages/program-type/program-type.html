@@ -1,0 +1,20 @@
+<section class="program-type">
+  <div class="program-type-header">
+    <div class="program-type-icon-container">
+      <i-lucide [name]="icon" size="24" class="title-icon-color"></i-lucide>
+    </div>
+    <div class="program-type-text">
+      <h3 class="program-type-title">{{ name }}</h3>
+      <p class="secondaryText">{{ description }}</p>
+    </div>
+  </div>
+
+  <div class="activity-items">
+    @for (activity of activities; track activity) {
+    <div class="activity-item">
+      <i-lucide [name]="activity.icon" size="28"></i-lucide>
+      <span>{{ activity.name }}</span>
+    </div>
+    }
+  </div>
+</section>

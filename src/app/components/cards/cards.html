@@ -1,0 +1,48 @@
+<div class="card">
+  <div
+    class="image-container"
+    [style.background-image]="'url(' + displayImageUrl + ')'"
+  >
+    <div class="top-bar">
+      <div class="status-overlay {{ getActiveClass() }}">{{ status }}</div>
+      <div class="context-menu-button">
+        <button class="menu-dots" (click)="toggleMenu($event)">
+          <span class="dot">⋮</span>
+        </button>
+        <div class="dropdown-menu" *ngIf="menuOpen">
+          <div class="menu-item">Edit</div>
+          <div class="menu-item">Delete</div>
+          <div class="menu-item">Archive</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tags-container">
+      @for (tag of tags; track tag) {
+      <label class="overlay-tags">{{ tag }}</label>
+      }
+    </div>
+  </div>
+
+  <div class="card-content">
+    <h3>{{ title }}</h3>
+    <span>
+      <p class="card-content-programType">{{ programType }}</p>
+      <p *ngIf="sport?.trim()" class="card-content-sport">
+        {{ sport }}
+      </p>
+    </span>
+    <p>
+      <mat-icon class="card-icon">calendar_today</mat-icon>
+      {{ startDate | date }}
+    </p>
+    <p>
+      <mat-icon class="card-icon">group</mat-icon>
+      {{ registeredUsers }} registered
+    </p>
+    <p>
+      <mat-icon class="card-icon">schedule</mat-icon> Ends
+      {{ endDate | date }}
+    </p>
+  </div>
+</div>

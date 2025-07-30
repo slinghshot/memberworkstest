@@ -1,0 +1,130 @@
+h1,
+h2,
+h3 {
+  color: #5d2b90;
+}
+/* body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+} */
+.create-program-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 100vh; /* This ensures full viewport height */
+  height: 100%;
+}
+.program-types-container {
+  padding-left: 15%;
+}
+.left-content {
+  flex: 0 0 20%; /* This sets flex-grow: 0, flex-shrink: 0, flex-basis: 30% */
+  padding: 20px;
+  min-height: 100vh;
+  /* border: 1px solid black; */
+  background-color: #ffffff;
+  overflow-y: auto;
+  /* Chrome, Safari, Edge scrollbar styling */
+  scrollbar-width: none; /* Firefox */
+
+  /* Chrome, Safari, and Edge */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.right-content {
+  flex: 0 0 75%; /* This sets flex-grow: 0, flex-shrink: 0, flex-basis: 70% */
+  padding: 20px;
+  /* border: 1px solid black; */
+  text-align: center;
+  min-height: 100vh;
+  overflow-y: auto;
+  /* Chrome, Safari, Edge scrollbar styling */
+  scrollbar-width: none; /* Firefox */
+
+  /* Chrome, Safari, and Edge */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #b5cff2;
+  margin: 20px 0;
+}
+
+.MenuHeader {
+  width: 100%;
+  /* border: 1px solid #ccc; */
+}
+.option {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: #f9fafb;
+  min-width: 200px;
+  overflow: hidden; /* Add this to contain children */
+}
+
+.option-number {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #4e5767;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #d2d5dc;
+}
+
+.option-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1; /* Take remaining space */
+  min-width: 0; /* Critical - allows content to shrink below content size */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.option-content h3 {
+  margin: 0 0 5px 0;
+  color: #4c5565;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.option-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add this to show ellipsis */
+}
+
+.active-option {
+  background-color: #e3eff8;
+  border-color: 1px solid #b9d8ee;
+  color: blue;
+}
+
+.active-option .option-number {
+  background-color: #4a9eda;
+  color: white;
+}
+.active-option .option-content h3 {
+  color: #4d9fdb;
+}

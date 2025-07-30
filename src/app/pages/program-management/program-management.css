@@ -1,0 +1,251 @@
+/* 1 – center the whole page */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center; /* centers the “page” */
+}
+
+/* 2 – fixed-width page with side borders */
+.main-section {
+  /* max-width: 960px; your desired content width */
+  width: 100%;
+  /* border-left: 12px solid #e0e0e0; */
+  /* border-right: 12px solid #e0e0e0; */
+  padding: 2rem;
+  box-sizing: border-box; /* keep padding inside the width */
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+/* 3 – flex row inside */
+.main-section > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.left-side {
+  flex: 1; /* takes up remaining space */
+}
+.right-side {
+  display: flex;
+  align-items: flex-start; /* Align to top */
+}
+
+/* 4 – simple mobile tweak */
+@media (max-width: 600px) {
+  .main-section > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+  padding: 1rem 0;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  /* border: solid 2px black; */
+}
+
+.info-cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Center the cards */
+  align-items: stretch; /* Make all cards the same height */
+  flex-wrap: nowrap; /* Keep cards in one line */
+  /* gap: 20px; Increase spacing between cards */
+  width: 100%;
+  /* overflow-x: auto; Allow horizontal scrolling on small screens */
+  padding: 0.5rem 0; /* Add some vertical padding */
+}
+.info-card {
+  /* border: 2px black solid; */
+  width: 15%;
+}
+
+/* Hide scrollbar but keep functionality */
+.info-cards-container::-webkit-scrollbar {
+  display: none;
+}
+.info-cards-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-field {
+  min-width: 250px;
+  flex-grow: 1;
+}
+
+.filter-field {
+  min-width: 150px;
+}
+
+/* Make sure the filters are responsive */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+  }
+
+  .search-field,
+  .filter-field {
+    width: 100%;
+  }
+
+  .info-cards-container {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: flex-start;
+    overflow-x: visible;
+  }
+
+  .info-card {
+    flex: 1 1 calc(50% - 16px); /* Two cards per row on medium screens */
+    /* border: 2px black solid; */
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-card {
+    flex: 1 1 100%; /* Full width on small screens */
+    max-width: none;
+  }
+}
+@media (max-width: 1040px) {
+  .info-card {
+    flex: 1 1 100%; /* Full width on small screens */
+
+    max-width: none;
+  }
+
+  /* This makes info cards stack vertically */
+  .info-cards-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: center; /* Center cards horizontally */
+    gap: 16px; /* Maintain spacing between stacked cards */
+  }
+
+  .info-card {
+    flex: 1 0 100%;
+    /* width: 350px; */
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
+/* Programs container - main layout */
+.programs-container {
+  display: flex;
+  gap: 2rem; /* Restore the gap for spacing between filter and content */
+  position: relative;
+  /* border: 1px solid black; */ /* Remove the debug border */
+}
+
+/* Left filter panel - fixed position */
+.left-aligned {
+  position: sticky;
+  top: 1rem;
+  width: 300px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  border-radius: 8px;
+  /* Ensure content is properly contained */
+  overflow-y: auto;
+  max-height: calc(100vh - 2rem);
+}
+
+/* Right content area - fluid width */
+.right-aligned {
+  flex: 1; /* Take up remaining space */
+  display: flex; /* Change from grid to flex */
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-start; /* Align content to the top */
+  align-self: flex-start; /* Align the container itself to the top */
+}
+
+/* Programs header */
+.programs-header {
+  display: flex;
+  flex-direction: row; /* Change from column to row */
+  justify-content: space-between; /* Push items to opposite ends */
+  align-items: center; /* Vertically center the items */
+  width: 100%; /* Take full width */
+  margin-bottom: 1.5rem;
+}
+
+/* Remove default margins from h3 within programs-header */
+.programs-header h3 {
+  margin: 0; /* Remove default margin */
+}
+
+/* Style for the secondary text */
+.programs-header .secondaryText {
+  margin: 0; /* Remove default margin */
+}
+
+/* Cards grid container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  /* Add this to ensure the container doesn't try to center its content */
+  align-self: start;
+  /* Add a minimum height to prevent layout shifts */
+  min-height: 200px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  padding: 1rem 0;
+  /* border: 3px solid black; */ /* Remove this debug border */
+}
+.create-program-button {
+  background-color: #4a9fd6;
+  color: #fff;
+  width: 220px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  margin-top: 0; /* Ensure it stays at the top */
+}
+.create-program-button:hover {
+  background-color: #3b8fc6;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .programs-container {
+    flex-direction: column;
+  }
+
+  .left-aligned {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}

@@ -1,0 +1,104 @@
+<div class="filter-container">
+  <h3>Filters</h3>
+  <div class="grouped-filters">
+    <label for="searchQuery">Search programs</label>
+    <div class="search-container">
+      <input
+        id="searchQuery"
+        class="search-field"
+        type="text"
+        [(ngModel)]="searchQuery"
+        (input)="filterPrograms()"
+        placeholder="Search by name, type, sport..."
+      />
+      <span class="search-icon">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 -4 20 21">
+          <path
+            d="M12.9 14.32a8 8 0 1 1 1.41-1.41l4.39 4.38a1 1 0 0 1-1.42 1.42l-4.38-4.39zM8 14a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <hr />
+  <div class="grouped-filters DropDown-Filter">
+    <label for="programType">Program Type</label>
+    <select
+      id="programType"
+      class="filter-field"
+      [(ngModel)]="selectedProgramType"
+      (change)="filterPrograms()"
+    >
+      <option value="">All Types</option>
+      @for (type of programTypes; track type) {
+      <option [value]="type">{{ type }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="grouped-filters DropDown-Filter">
+    <label for="sport">Sport</label>
+    <select
+      id="sport"
+      class="filter-field"
+      [(ngModel)]="selectedSport"
+      (change)="filterPrograms()"
+    >
+      <option value="">All Sports</option>
+      @for (sport of sports; track sport) {
+      <option [value]="sport">{{ sport }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="grouped-filters DropDown-Filter">
+    <label for="status">Status</label>
+    <select
+      id="status"
+      class="filter-field"
+      [(ngModel)]="selectedStatus"
+      (change)="filterPrograms()"
+    >
+      <option value="">All Statuses</option>
+      @for (status of statuses; track status) {
+      <option [value]="status">{{ status }}</option>
+      }
+    </select>
+  </div>
+  <hr />
+  <div>
+    <label>Quick Filters</label>
+    <div class="checkbox-container">
+      <label class="checkbox-label">
+        <input
+          type="checkbox"
+          [(ngModel)]="recentlyCreated"
+          (change)="filterPrograms()"
+        />
+        Recently Created
+      </label>
+    </div>
+
+    <div class="checkbox-container">
+      <label class="checkbox-label">
+        <input
+          type="checkbox"
+          [(ngModel)]="highRegistration"
+          (change)="filterPrograms()"
+        />
+        High Registration
+      </label>
+    </div>
+
+    <div class="checkbox-container">
+      <label class="checkbox-label">
+        <input
+          type="checkbox"
+          [(ngModel)]="endingSoon"
+          (change)="filterPrograms()"
+        />
+        Ending Soon
+      </label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+.program-type {
+  /* border: 1px solid #ccc; */
+  text-align: left;
+  width: 80%;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.program-type-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #b5cff2;
+}
+
+.program-type-icon-container {
+  flex: 0 0 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #f0f0f0; */
+  /* border-radius: 50%; */
+  margin-right: 0px;
+}
+
+.program-type-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-type-text h3 {
+  margin: 0 0 5px 0;
+}
+
+.program-type-text p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.activity-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.activity-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px 8px;
+  border: 1px solid #d5d8dd;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100px; /* Fixed height for rectangular shape */
+  width: 90px; /* Narrower width */
+}
+
+.activity-item i-lucide {
+  margin-bottom: 8px;
+  color: #6e7b90;
+}
+
+.activity-item span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  line-height: 1.2;
+}
+
+.program-type-title {
+  font-size: 1.4rem;
+  color: #5d2b90;
+}
+.program-type-text p {
+  font-size: 1rem;
+  /* color: #666; */
+}
+
+.title-icon-color {
+  color: #4fa1db;
+}

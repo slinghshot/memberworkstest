@@ -1,0 +1,42 @@
+.info-card {
+  border: 1px solid #cccccca8;
+  border-radius: 8px;
+  display: flex;
+  flex: 2 1 auto; /* Make cards grow and shrink equally */
+  /* width: 100%; */
+  max-width: 400px;
+  min-width: 120px;
+  /* overflow: hidden; */
+  background-color: white;
+  transition: all 0.2s ease; /* Smooth transition when resizing */
+}
+
+/* Optional: add hover effect */
+.info-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+.left-side {
+  /* border: solid 1px #ccc; */
+  flex: 1;
+  padding: 0.5rem;
+  overflow: hidden;
+  align-self: center;
+  padding-left: 1rem;
+}
+.left-side h2,
+.left-side p {
+  padding: 5px;
+  margin: 1px;
+}
+.right-side {
+  /* border: solid 1px #ccc; */
+  flex: 0 0 auto;
+  padding: 0.5rem;
+  align-self: center;
+  padding-right: 1rem;
+}
+
+.info-description {
+  color: #666;
+}
